@@ -182,7 +182,7 @@ The detailed pictorial view of the scalable architecture for Docker containeriza
 # Click on the miro board link below
  - https://miro.com/app/board/uXjVKOwtQaM=/?share_link_id=591420014426
 ## Watch the video by clicking on the thumbnail below:
-[![Scalable Docker Architecture on AWS](https://img.youtube.com/vi/pI1j8HpePNM/maxresdefault.jpg)](https://www.youtube.com/embed/pI1j8HpePNM?si=BRuOZGmSIhd1JsNi)
+[![Scalable Docker Architecture on AWS](https://img.youtube.com/vi/pI1j8HpePNM/maxresdefault.jpg)](https://www.youtube.com/embed/pI1j8HpePNM?si=rjHJy3kVKQEZYbBe)
 
 ## The numbered steps indicate the pipeline flow as follows:
 
