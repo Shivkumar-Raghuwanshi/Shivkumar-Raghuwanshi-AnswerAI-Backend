@@ -6,6 +6,7 @@ AnswersAi-Backend is a scalable RESTful API built with Node.js, Express.js, and 
 2. **AWS architecture Design**: https://miro.com/app/board/uXjVKOwtQaM=/?share_link_id=591420014426
 3. **Scalable Docker Architecture on AWS**: https://www.youtube.com/watch?v=pI1j8HpePNM
 4. **AnswersAi-Backend API**: https://www.youtube.com/watch?v=SvV9BUQbA9g
+5. **Run Doker**: https://www.youtube.com/watch?v=Wzp4Lh-KBDs
 ## Tech Stack
 
 - **Node.js**: Node.js is a JavaScript runtime built on Chrome’s V8 engine. It allows you to execute JavaScript code outside of a web browser, making it ideal for server-side applications.
@@ -176,6 +177,8 @@ If you want to run the project using Docker, you can pull the Docker image from 
 
 - docker pull shivkumar56/answerai:latest
 - docker run -d -p 3000:3000 shivkumar56/answerai
+## Watch the video by clicking on the thumbnail below:
+[![Run Docker](https://img.youtube.com/vi/Wzp4Lh-KBDs/maxresdefault.jpg)](https://www.youtube.com/embed/Wzp4Lh-KBDs?si=k4Vf9U9lmY7yd6ZB)
 
 ## AWS architecture Design
 The detailed pictorial view of the scalable architecture for Docker containerization on AWS with ECR, ECS (Fargate), ELB, Redis, ElastiCache and PostgreSQL, along with the pipeline flow indicated by numbered steps:
