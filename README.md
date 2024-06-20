@@ -174,94 +174,11 @@ If you want to run the project using Docker, you can pull the Docker image from 
 - docker run -d -p 3000:3000 shivkumar56/answerai
 
 ## Infrastructure Design
-The detailed pictorial view of the scalable architecture for Docker containerization on AWS with ECR, ECS (Fargate), ELB, Redis, and PostgreSQL, along with the pipeline flow indicated by numbered steps:
-
-+---------------+
-|     ECR       |
-|   (Docker     |
-|    Registry)  |
-+---------------+
-        ⬆1
-        |
-        |
-+---------------+
-|     ECS       |
-| (Container    |
-|   Cluster)    |
-+---------------+
-        |2
-        ⬇
-+---------------+
-|     ALB       |
-| (Application  |
-|  Load Balancer)|
-+---------------+
-        ⬇3
-        |
-+---------------+
-|   ECS Service |
-|   (App)       |
-| (Fargate Service Type)
-+---------------+
-        |
-        ⬇4
-+---------------+
-|   Fargate     |
-|   Task        |
-|   (Running    |
-|  Containers)  |
-+---------------+
-        ⬅6
-        |
-        ⬇
-+---------------+        +---------------+
-|   ElastiCache |        |      RDS      |
-|    (Redis)    |        | (PostgreSQL)  |
-+---------------+        +---------------+
-        |5                     |7
-        ⬇                       ⬇
-+---------------+        +---------------+
-|   Redis Node  |        | PostgreSQL    |
-|   (Primary)   |        |   Instance    |
-+---------------+        +---------------+
-        |
-+---------------+
-|  Redis Node   |
-|    (Replica)  |
-+---------------+
-
-        ⬅8
-        |
-+---------------+
-|   ECS Service |
-|   (App)       |
-| (Fargate Service Type)
-+---------------+
-        |
-        ⬅8
-        |
-+---------------+
-|   ECS Service |
-|   (App)       |
-| (Fargate Service Type)
-+---------------+
-
-+---------------+
-|     VPC       |
-|   (Virtual    |
-|  Private Cloud)|
-+---------------+
-        |
-+---------------+
-|   Pub Subnet  |
-|   (ALB)       |
-+---------------+
-        |
-+---------------+
-|  Priv Subnet  |
-| (Fargate Tasks,|
-|  Redis, Postgres)|
-+---------------+
+The detailed pictorial view of the scalable architecture for Docker containerization on AWS with ECR, ECS (Fargate), ELB, Redis, ElastiCache and PostgreSQL, along with the pipeline flow indicated by numbered steps:
+# Click on the miro board link below
+ - https://miro.com/app/board/uXjVKOwtQaM=/?share_link_id=591420014426
+## Watch the video by clicking on the thumbnail below:
+[![Scalable Docker Architecture on AWS](https://img.youtube.com/vi/pI1j8HpePNM/maxresdefault.jpg)](https://www.youtube.com/embed/pI1j8HpePNM?si=1N4D1udHFxd6NPsm)
 
 ## The numbered steps indicate the pipeline flow as follows:
 
