@@ -192,27 +192,27 @@ The detailed pictorial view of the scalable architecture for Docker containeriza
 - In this architecture, all ECS Services are using the Fargate Service Type, which means that AWS manages the underlying compute resources (without the need for EC2 instances). The Fargate Tasks are launched and managed by AWS to run the containers for each ECS Service.
 
 ## Setup and Running Instructions
-1. # Clone the repository:
+1. ### Clone the repository:
 - git clone https://github.com/Shivkumar-Raghuwanshi/Shivkumar-Raghuwanshi-AnswersAi-Backend.git
 - cd AnswersAi-Backend
-2. # Install dependencies: 
+2. ### Install dependencies: 
 - npm install
-3. # Set up environment variables:
+3. ### Set up environment variables:
 - DATABASE_URL="postgresql://username:password@localhost:5432/answersai"
 - JWT_SECRET="your_jwt_secret"
 - ANTHROPIC_API_KEY="your_anthropic_api_key"
-4. # Run database migrations:
+4. ### Run database migrations:
 - npx prisma migrate dev
-5. # Compile TypeScript to JavaScript:
+5. ### Compile TypeScript to JavaScript:
  - npx tsc
-6. # Start the development server: 
+6. ### Start the development server: 
 - node dist/app.js
 The server will start running at http://localhost:3000
 
 ## Docker Setup
 If you want to run the project using Docker, follow these steps:
 
-1. # Build the Docker image: 
+1. ### Build the Docker image: 
 - docker build -t answersai-backend .
-2. # Run the Docker container:
+2. ### Run the Docker container:
 - docker run -p 3000:3000 -e DATABASE_URL="postgresql://username:password@host.docker.internal:5432/answersai" -e JWT_SECRET="your_jwt_secret" -e ANTHROPIC_API_KEY="your_anthropic_api_key" answersai-backend
