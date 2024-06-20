@@ -2,10 +2,10 @@
 
 AnswersAi-Backend is a scalable RESTful API built with Node.js, Express.js, and TypeScript, designed to provide AI-generated answers to user questions. It utilizes Prisma as an ORM, Docker for containerization, LangChain for AI-powered question answering, Anthropic API for chat functionality, and Supabase for PostgreSQL database management.
 
-Docker Hub: https://hub.docker.com/r/shivkumar56/answerai
-AWS architecture Design: https://miro.com/app/board/uXjVKOwtQaM=/?share_link_id=591420014426
-Scalable Docker Architecture on AWS: https://www.youtube.com/watch?v=pI1j8HpePNM
-AnswersAi-Backend API: https://www.youtube.com/watch?v=SvV9BUQbA9g
+1. **Docker Hub**: https://hub.docker.com/r/shivkumar56/answerai
+2. **AWS architecture Design**: https://miro.com/app/board/uXjVKOwtQaM=/?share_link_id=591420014426
+3. **Scalable Docker Architecture on AWS**: https://www.youtube.com/watch?v=pI1j8HpePNM
+4. **AnswersAi-Backend API**: https://www.youtube.com/watch?v=SvV9BUQbA9g
 ## Tech Stack
 
 - **Node.js**: Node.js is a JavaScript runtime built on Chrome’s V8 engine. It allows you to execute JavaScript code outside of a web browser, making it ideal for server-side applications.
