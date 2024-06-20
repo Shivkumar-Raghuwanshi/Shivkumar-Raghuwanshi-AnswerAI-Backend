@@ -176,8 +176,7 @@ If you want to run the project using Docker, you can pull the Docker image from 
 ## Infrastructure Design
 The detailed pictorial view of the scalable architecture for Docker containerization on AWS with ECR, ECS (Fargate), ELB, Redis, and PostgreSQL, along with the pipeline flow indicated by numbered steps:
 
-## Watch the video by clicking on the thumbnail below:
-[![Scalable Docker Architecture on AWS](https://img.youtube.com/vi/pI1j8HpePNM/maxresdefault.jpg)](https://www.youtube.com/embed/pI1j8HpePNM?si=1N4D1udHFxd6NPsm)
+
 
 
 +---------------+
