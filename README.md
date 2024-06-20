@@ -174,109 +174,21 @@ If you want to run the project using Docker, you can pull the Docker image from 
 - docker run -d -p 3000:3000 shivkumar56/answerai
 
 ## Infrastructure Design
-The detailed pictorial view of the scalable architecture for Docker containerization on AWS with ECR, ECS (Fargate), ELB, Redis, and PostgreSQL, along with the pipeline flow indicated by numbered steps:
+The detailed pictorial view of the scalable architecture for Docker containerization on AWS with ECR, ECS (Fargate), ELB, Redis, ElastiCache and PostgreSQL, along with the pipeline flow indicated by numbered steps:
+# Click on the miro board link below
+ - https://miro.com/app/board/uXjVKOwtQaM=/?share_link_id=591420014426
 
-+---------------+
-|     ECR       |
-|   (Docker     |
-|    Registry)  |
-+---------------+
-        ⬆1
-        |
-        |
-+---------------+
-|     ECS       |
-| (Container    |
-|   Cluster)    |
-+---------------+
-        |2
-        ⬇
-+---------------+
-|     ALB       |
-| (Application  |
-|  Load Balancer)|
-+---------------+
-        ⬇3
-        |
-+---------------+
-|   ECS Service |
-|   (App)       |
-| (Fargate Service Type)
-+---------------+
-        |
-        ⬇4
-+---------------+
-|   Fargate     |
-|   Task        |
-|   (Running    |
-|  Containers)  |
-+---------------+
-        ⬅6
-        |
-        ⬇
-+---------------+        +---------------+
-|   ElastiCache |        |      RDS      |
-|    (Redis)    |        | (PostgreSQL)  |
-+---------------+        +---------------+
-        |5                     |7
-        ⬇                       ⬇
-+---------------+        +---------------+
-|   Redis Node  |        | PostgreSQL    |
-|   (Primary)   |        |   Instance    |
-+---------------+        +---------------+
-        |
-+---------------+
-|  Redis Node   |
-|    (Replica)  |
-+---------------+
-
-        ⬅8
-        |
-+---------------+
-|   ECS Service |
-|   (App)       |
-| (Fargate Service Type)
-+---------------+
-        |
-        ⬅8
-        |
-+---------------+
-|   ECS Service |
-|   (App)       |
-| (Fargate Service Type)
-+---------------+
-
-+---------------+
-|     VPC       |
-|   (Virtual    |
-|  Private Cloud)|
-+---------------+
-        |
-+---------------+
-|   Pub Subnet  |
-|   (ALB)       |
-+---------------+
-        |
-+---------------+
-|  Priv Subnet  |
-| (Fargate Tasks,|
-|  Redis, Postgres)|
-+---------------+
 
 ## The numbered steps indicate the pipeline flow as follows:
 
-1.  Our Docker container images are built and pushed to the ECR (Elastic Container Registry).
+1. Docker images are pulled from the ECR (Docker Registry) to the ECS (Container Cluster).
 2. The ECS cluster retrieves the container images from ECR.
 3. The ECS cluster manages and runs the ECS Services using the Fargate Service Type with the container images The ALB (Application Load Balancer) distributes incoming traffic to these running ECS Services.
-4. For the Fargate Service Type, AWS launches and manages the underlying Fargate Tasks to run the containers.
-5. The ECS Services (containers) running on Fargate Tasks interact with the Redis cluster for caching purposes.
-6. The ECS Services (containers) running on Fargate Tasks interact with the Redis cluster, which consists of a primary node and a replica node for high availability.
-7. The ECS Services (containers) running on Fargate Tasks interact with the PostgreSQL instance for data storage and retrieval.
-8. Multiple ECS Services can be configured to use the Fargate Service Type, and they interact with Redis and PostgreSQL for caching and data storage/retrieval, respectively.
+4. The ECS Services run the application containers on the Fargate Task (Running Containers).
+5. The Fargate Tasks communicate with the ElastiCache (Redis) for data caching and retrieval.
+6. The Fargate Tasks interact with the PostgreSQL database (RDS) for data storage and retrieval.
 
 - In this architecture, all ECS Services are using the Fargate Service Type, which means that AWS manages the underlying compute resources (without the need for EC2 instances). The Fargate Tasks are launched and managed by AWS to run the containers for each ECS Service.
-
-- The Fargate Tasks, along with the Redis and PostgreSQL instances, are deployed in the private subnet of the VPC for secure isolation, while the ALB resides in the public subnet to handle incoming traffic. By using the Fargate Service Type, you don't have to manage the underlying EC2 instances, as AWS takes care of provisioning and scaling the compute resources for our containers. This serverless approach simplifies operations and reduces the overhead of infrastructure management.
 
 ## Setup and Running Instructions
 1. # Clone the repository:
