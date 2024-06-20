@@ -3,7 +3,9 @@
 AnswersAi-Backend is a scalable RESTful API built with Node.js, Express.js, and TypeScript, designed to provide AI-generated answers to user questions. It utilizes Prisma as an ORM, Docker for containerization, LangChain for AI-powered question answering, Anthropic API for chat functionality, and Supabase for PostgreSQL database management.
 
 Docker Hub: https://hub.docker.com/r/shivkumar56/answerai
-
+AWS architecture Design: https://miro.com/app/board/uXjVKOwtQaM=/?share_link_id=591420014426
+Scalable Docker Architecture on AWS: https://www.youtube.com/watch?v=pI1j8HpePNM
+AnswersAi-Backend API: https://www.youtube.com/watch?v=SvV9BUQbA9g
 ## Tech Stack
 
 - **Node.js**: Node.js is a JavaScript runtime built on Chrome’s V8 engine. It allows you to execute JavaScript code outside of a web browser, making it ideal for server-side applications.
@@ -16,6 +18,8 @@ Docker Hub: https://hub.docker.com/r/shivkumar56/answerai
 - **Supabase**:  Supabase combines a PostgreSQL database with authentication services. It simplifies backend development by providing a ready-to-use database and user management system.
 
 ## API Endpoints
+## Watch the video by clicking on the thumbnail below:
+[![API Endpoints](https://img.youtube.com/vi/SvV9BUQbA9g/maxresdefault.jpg)](https://www.youtube.com/embed/SvV9BUQbA9g?si=p_YL0Woz88V4HxQU)
 
 ### Users
 
@@ -173,7 +177,7 @@ If you want to run the project using Docker, you can pull the Docker image from 
 - docker pull shivkumar56/answerai:latest
 - docker run -d -p 3000:3000 shivkumar56/answerai
 
-## Infrastructure Design
+## AWS architecture Design
 The detailed pictorial view of the scalable architecture for Docker containerization on AWS with ECR, ECS (Fargate), ELB, Redis, ElastiCache and PostgreSQL, along with the pipeline flow indicated by numbered steps:
 # Click on the miro board link below
  - https://miro.com/app/board/uXjVKOwtQaM=/?share_link_id=591420014426
