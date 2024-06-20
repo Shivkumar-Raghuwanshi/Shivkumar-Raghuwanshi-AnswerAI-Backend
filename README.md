@@ -6,7 +6,7 @@ AnswersAi-Backend is a scalable RESTful API built with Node.js, Express.js, and 
 2. **AWS architecture Design**: https://miro.com/app/board/uXjVKOwtQaM=/?share_link_id=591420014426
 3. **Scalable Docker Architecture on AWS**: https://www.youtube.com/watch?v=pI1j8HpePNM
 4. **AnswersAi-Backend API**: https://www.youtube.com/watch?v=SvV9BUQbA9g
-5. **Run Doker**: https://www.youtube.com/watch?v=Wzp4Lh-KBDs
+5. **Run Docker**: https://www.youtube.com/watch?v=Wzp4Lh-KBDs
 ## Tech Stack
 
 - **Node.js**: Node.js is a JavaScript runtime built on Chrome’s V8 engine. It allows you to execute JavaScript code outside of a web browser, making it ideal for server-side applications.
